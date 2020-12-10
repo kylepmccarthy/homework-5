@@ -1,0 +1,18 @@
+name: musa509week6
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pandas
+  - rtree
+  - psycopg2
+  - sqlalchemy
+  - seaborn
+  - pip
+  - jupyterlab
+  - pip:
+    - GeoAlchemy2
+    - geopandas
+    - cartoframes
+    - google-cloud-bigquery[pandas]
+    - nb-black

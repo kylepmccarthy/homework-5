@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>San Diego Public Building Finder</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+</head>
+<body>
+
+    <div class="section hero">
+        <div class="container">
+            <div class="row">
+                <h1>Public Building Finder</h1>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+  <div class="row">
+      <div class="eight columns">
+          <form action="{{ url_for('vacant_viewer') }}" method="get">
+              <div>
+                  <label>Neighborhood Name</label>
+                  <select class="u-full-width" name="neighborhood">
+                      {% for nname in nnames %}
+                      <option value="{{ nname }}">{{ nname }}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+              <input type="submit" value="Submit">
+          </form>
+      </div>
+
+      <div class="four columns">
+      Please select a neighborhood to view the damage cost of buildings within the chosen neighborhood.
+      </div>
+  </div>
+        </div>
+
+    </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
